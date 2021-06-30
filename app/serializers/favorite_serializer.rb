@@ -1,3 +1,3 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  attributes :id :movie
+  attributes :id, :movie, :review
 end
