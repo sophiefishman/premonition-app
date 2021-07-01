@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     user = User.find_by(id: params[:id])
     if user == current_user
       user.destroy
-      render json: { message: "user deleted!" }
+      render json: { message: "This user has been deleted!" }
     else
       render json: { errors: "you are not authorized to update this user" }, status: :unauthorized
     end
