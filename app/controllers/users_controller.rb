@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: user.to_json(only: [:id, :name, :email]), status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       user.email = params[:email] || user.email
       user.password_digest = params[:password_digest] || user.password_digest
       if user.save
-        render json: user.as_json
+        render json: user.to_json(only: [:id, :name, :email])
       else
         render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
       end

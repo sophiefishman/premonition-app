@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   patch "/favorites/:id" => "favorites#update"
   delete "favorites/:id" => "favorites#destroy"
 
+  get "/movies" => "movies#index"
+  get "/movies/:id" => "movies#show"
+
 
 
 end

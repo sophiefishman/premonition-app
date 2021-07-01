@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
     review: params[:review]
     )
     favorite.save
-    render json: favorite.as_json
+    render json: favorite
   end
 
   def update
@@ -22,7 +22,7 @@ class FavoritesController < ApplicationController
     favorite.user_id = current_user.id
     favorite.review = params[:review] || favorite.review
     favorite.save
-    render json: favorite.as_json
+    render json: favorite
   end
 
   def destroy
