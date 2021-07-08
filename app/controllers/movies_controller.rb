@@ -12,4 +12,6 @@ class MoviesController < ApplicationController
     render json: movie
     
   end
+
+  
 end
